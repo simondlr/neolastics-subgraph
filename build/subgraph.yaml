@@ -1,0 +1,50 @@
+specVersion: 0.0.2
+description: Neolastics
+repository: https://github.com/simondlr/neolastics-subgraph
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Neolastics
+    network: mainnet
+    source:
+      address: "0xFC592c75Cda1DB6B53b45510707BbBbf29269490"
+      abi: Neolastics
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Burned
+        - Minted
+      abis:
+        - name: Neolastics
+          file: Neolastics/abis/ERC721.json
+      eventHandlers:
+        - event: Minted(indexed uint256,uint256,indexed uint256,indexed address,uint256)
+          handler: handleNewERC721Minted
+        - event: Burned(indexed uint256,indexed address,uint256)
+          handler: handleNewERC721Burned
+      file: Neolastics/Neolastics.wasm
+  - kind: ethereum/contract
+    name: Curve
+    network: mainnet
+    source:
+      address: "0xab387f2826759BbE08eA102d0C067365187648C7"
+      abi: Curve
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Burned
+        - Minted
+      abis:
+        - name: Curve
+          file: Curve/abis/Curve.json
+      eventHandlers:
+        - event: Minted(indexed uint256,indexed uint256,indexed uint256)
+          handler: handleNewCurveMinted
+        - event: Burned(indexed uint256,indexed uint256,indexed uint256)
+          handler: handleNewCurveBurned
+      file: Curve/Curve.wasm

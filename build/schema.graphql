@@ -1,0 +1,22 @@
+type Collector @entity {
+  id: ID! 
+  totalOwned: BigInt!
+  neolastics: [Neolastic!] @derivedFrom(field: "owner")
+}
+
+type Neolastic @entity {
+  id: ID!
+  created: BigInt!
+  owner: Collector!
+  pricePaid: BigInt!
+}
+
+type Curve @entity {
+  id: ID!
+  totalSupply: BigInt!
+  totalEverMinted: BigInt!
+  totalEverPaid: BigInt!
+  reserve: BigInt!
+  mintPrice: BigInt!
+  burnPrice: BigInt!
+}
