@@ -10,6 +10,7 @@ dataSources:
     source:
       address: '0xB2D6fb1Dc231F97F8cC89467B52F7C4F78484044'
       abi: Neolastics 
+      startBlock: 11534959
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -31,7 +32,8 @@ dataSources:
     network: mainnet
     source:
       address: '0x174150478891bdD4EAefaB50FB24B9126F289FA6'
-      abi: Curve 
+      abi: Curve
+      startBlock: 11534959
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
