@@ -8,9 +8,8 @@ dataSources:
     name: Neolastics 
     network: mainnet
     source:
-      address: '0xB2D6fb1Dc231F97F8cC89467B52F7C4F78484044'
-      abi: Neolastics
-      startBlock: 1153495
+      address: '0xFC592c75Cda1DB6B53b45510707BbBbf29269490'
+      abi: Neolastics 
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -34,9 +33,8 @@ dataSources:
     name: Curve
     network: mainnet
     source:
-      address: '0x174150478891bdD4EAefaB50FB24B9126F289FA6'
+      address: '0xab387f2826759BbE08eA102d0C067365187648C7'
       abi: Curve
-      startBlock: 1153495
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
